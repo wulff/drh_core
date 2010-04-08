@@ -1,0 +1,5 @@
+; $Id$
+name = Core
+description = Custom functionality for the drh.dk site.
+package = DRH
+core = 6.x

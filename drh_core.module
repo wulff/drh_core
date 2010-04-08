@@ -1,0 +1,41 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ * Custom functionality for the drh.dk site.
+ */
+
+define('DRH_BUILD_TEASER_FRONT', 'teaser_front');
+define('DRH_BUILD_TEASER_SIDEBAR', 'teaser_sidebar');
+
+/* --- HOOKS ---------------------------------------------------------------- */
+
+function drh_core_init() {
+  if ('admin' == arg(0) && 'pages' == arg(2)) {
+    drupal_add_css(drupal_get_path('module', 'drh_core') .'/styles/drh_core.panels.css');
+  }
+}
+
+/* --- CCK HOOKS ------------------------------------------------------------ */
+
+/**
+ * Implementation of hook_content_build_modes().
+ */
+function drh_core_content_build_modes() {
+  return array(
+    'teaser' => array(
+      'title' => t('Frontpage'),
+      'build modes' => array(
+        DRH_BUILD_TEASER_FRONT => array(
+          'title' => t('Frontpage teaser'),
+          'views style' => TRUE,
+        ),
+        DRH_BUILD_TEASER_SIDEBAR => array(
+          'title' => t('Sidebar teaser'),
+          'views style' => TRUE,
+        ),
+      ),
+    ),
+  );
+}
