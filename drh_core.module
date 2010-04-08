@@ -9,6 +9,8 @@
 define('DRH_BUILD_TEASER_FRONT', 'teaser_front');
 define('DRH_BUILD_TEASER_SIDEBAR', 'teaser_sidebar');
 
+include_once('drh_core.features.inc');
+
 /* --- HOOKS ---------------------------------------------------------------- */
 
 function drh_core_init() {
