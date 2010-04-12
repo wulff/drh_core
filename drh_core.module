@@ -17,6 +17,9 @@ function drh_core_init() {
   if ('admin' == arg(0) && 'pages' == arg(2)) {
     drupal_add_css(drupal_get_path('module', 'drh_core') .'/styles/drh_core.panels.css');
   }
+  if (drupal_is_front_page()) {
+    drupal_add_js(drupal_get_path('module', 'drh_core') .'/scripts/front.js');
+  }
 }
 
 /* --- CCK HOOKS ------------------------------------------------------------ */
