@@ -11,7 +11,7 @@ define('DRH_BUILD_TEASER_SIDEBAR', 'teaser_sidebar');
 
 //include_once('drh_core.features.inc');
 
-/* --- HOOKS ---------------------------------------------------------------- */
+/* --- HOOKS (CORE) --------------------------------------------------------- */
 
 /*
 function drh_core_init() {
@@ -24,7 +24,33 @@ function drh_core_init() {
 }
 */
 
-/* --- CCK HOOKS ------------------------------------------------------------ */
+/* --- HOOKS (CTOOLS) ------------------------------------------------------- */
+
+/**
+ * Implementation of hook_ctools_plugin_api().
+ */
+function drh_core_ctools_plugin_api($module, $api) {
+  if ($module == 'page_manager' && $api == 'pages_default') {
+    return array('version' => 1);
+  }
+  if ($module == 'panels_mini' && $api == 'panels_default') {
+    return array('version' => 1);
+  }
+  if ($module == 'strongarm' && $api == 'strongarm') {
+    return array('version' => 1);
+  }
+}
+
+/* --- HOOKS (VIEWS) -------------------------------------------------------- */
+
+/**
+ * Implementation of hook_views_api().
+ */
+function drh_core_views_api() {
+  return array('api' => 2.0);
+}
+
+/* --- HOOKS (CCK) ---------------------------------------------------------- */
 
 /**
  * Implementation of hook_content_build_modes().
