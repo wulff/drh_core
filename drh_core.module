@@ -41,6 +41,18 @@ function drh_core_ctools_plugin_api($module, $api) {
   }
 }
 
+/**
+ * Implementation of hook_ctools_plugin_directory().
+ */
+function drh_core_ctools_plugin_directory($module, $plugin) {
+  if ('panels' == $module && ('layouts' == $plugin || 'styles' == $plugin)) {
+    return 'plugins/'. $plugin;
+  }
+  if ('ctools' == $module && !empty($plugin)) {
+    return 'plugins/'. $plugin;
+  }
+}
+
 /* --- HOOKS (VIEWS) -------------------------------------------------------- */
 
 /**
