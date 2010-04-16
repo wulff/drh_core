@@ -461,7 +461,7 @@ function drh_core_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'nid' => '51',
+      'nid' => '1',
       'teaser' => 0,
       'links' => 0,
       'leave_node_title' => 0,
@@ -484,7 +484,7 @@ function drh_core_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'nid' => '52',
+      'nid' => '2',
       'teaser' => 0,
       'links' => 0,
       'leave_node_title' => 0,
@@ -507,7 +507,7 @@ function drh_core_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'nid' => '53',
+      'nid' => '3',
       'teaser' => 0,
       'links' => 0,
       'leave_node_title' => 0,
@@ -530,7 +530,7 @@ function drh_core_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'nid' => '54',
+      'nid' => '4',
       'teaser' => 0,
       'links' => 0,
       'leave_node_title' => 0,
