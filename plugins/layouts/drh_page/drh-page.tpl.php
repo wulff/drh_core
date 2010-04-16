@@ -21,9 +21,10 @@
     <?php endif; ?>
   </div>
 
-  <hr class="panel-separator" />
-
   <?php // TODO: make the bottom part flexible as well... ?>
+  <?php if ($content['bottom_left'] || $content['bottom_main'] || $content['bottom_right']): ?>
+  <hr class="panel-separator" />
+  <?php endif; ?>
   <div class="clear-block">
     <div class="panel-panel grid-3">
       <div class="inside"><?php print $content['bottom_left']; ?></div>

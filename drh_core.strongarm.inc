@@ -22,7 +22,7 @@ function drh_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_footer';
-  $strongarm->value = 'Den Rytmiske Højskole · Jyderupvej 18 · 4560 Vig · 5936 0600 · <a href="/kontakt">den@rytmiske.dk</a>';
+  $strongarm->value = 'Den Rytmiske Højskole · Jyderupvej 18 · 4560 Vig · 59 360 600 · <a href="/kontakt">den@rytmiske.dk</a>';
   $strongarms['site_footer'] = $strongarm;
 
   $strongarm = new stdClass;
