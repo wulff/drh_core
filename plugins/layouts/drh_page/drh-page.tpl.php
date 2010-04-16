@@ -22,7 +22,7 @@
   </div>
 
   <?php // TODO: make the bottom part flexible as well... ?>
-  <?php if ($content['bottom_left'] || $content['bottom_main'] || $content['bottom_right']): ?>
+  <?php if (!$panel_admin && ($content['bottom_left'] || $content['bottom_main'] || $content['bottom_right'])): ?>
   <hr class="panel-separator" />
   <?php endif; ?>
   <div class="clear-block">
