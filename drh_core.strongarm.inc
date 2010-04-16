@@ -40,6 +40,20 @@ function drh_core_strongarm() {
   $strongarm->value = TRUE;
   $strongarms['admin_menu_tweak_modules'] = $strongarm;
 
+  // image
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'image_jpeg_quality';
+  $strongarm->value = 80;
+  $strongarms['image_jpeg_quality'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'imageapi_jpeg_quality';
+  $strongarm->value = 80;
+  $strongarms['imageapi_jpeg_quality'] = $strongarm;
+
   // nodeformcols
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

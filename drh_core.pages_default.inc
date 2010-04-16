@@ -149,7 +149,7 @@ function drh_core_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -9;
+  $handler->weight = 2;
   $handler->conf = array(
     'title' => 'Standard',
     'no_blocks' => 0,
