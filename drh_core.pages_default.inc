@@ -15,6 +15,70 @@ function drh_core_default_page_manager_handlers() {
   $handler = new stdClass;
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'node_view_panel_context_2';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = 1;
+  $handler->conf = array(
+    'title' => 'Billede',
+    'no_blocks' => FALSE,
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        '0' => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'image' => 'image',
+            ),
+          ),
+          'context' => 'argument_nid_1',
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display;
+  $display->layout = 'drh_page';
+  $display->layout_settings = array();
+  $display->panel_settings = array();
+  $display->cache = array();
+  $display->title = '';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass;
+    $pane->pid = 'new-1';
+    $pane->panel = 'top_main';
+    $pane->type = 'content_field';
+    $pane->subtype = 'field_image';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'normal',
+      'formatter' => 'grid-16_default',
+      'context' => 'argument_nid_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array();
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $display->content['new-1'] = $pane;
+    $display->panels['top_main'][0] = 'new-1';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-1';
+  $handler->conf['display'] = $display;
+  $handlers['node_view_panel_context_2'] = $handler;
+
+  $handler = new stdClass;
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'node_edit_panel_context';
   $handler->task = 'node_edit';
   $handler->subtask = '';
@@ -331,70 +395,6 @@ function drh_core_default_page_manager_handlers() {
   $handler->conf['display'] = $display;
   $handlers['contact_site_panel_context'] = $handler;
 
-  $handler = new stdClass;
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'node_view_panel_context_2';
-  $handler->task = 'node_view';
-  $handler->subtask = '';
-  $handler->handler = 'panel_context';
-  $handler->weight = 1;
-  $handler->conf = array(
-    'title' => 'Billede',
-    'no_blocks' => FALSE,
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
-    'access' => array(
-      'plugins' => array(
-        '0' => array(
-          'name' => 'node_type',
-          'settings' => array(
-            'type' => array(
-              'image' => 'image',
-            ),
-          ),
-          'context' => 'argument_nid_1',
-        ),
-      ),
-      'logic' => 'and',
-    ),
-  );
-  $display = new panels_display;
-  $display->layout = 'drh_page';
-  $display->layout_settings = array();
-  $display->panel_settings = array();
-  $display->cache = array();
-  $display->title = '';
-  $display->content = array();
-  $display->panels = array();
-    $pane = new stdClass;
-    $pane->pid = 'new-1';
-    $pane->panel = 'top_main';
-    $pane->type = 'content_field';
-    $pane->subtype = 'field_image';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'normal',
-      'formatter' => 'grid-16_default',
-      'context' => 'argument_nid_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array();
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $display->content['new-1'] = $pane;
-    $display->panels['top_main'][0] = 'new-1';
-  $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-1';
-  $handler->conf['display'] = $display;
-  $handlers['node_view_panel_context_2'] = $handler;
-
   return $handlers;
 }
 /**
@@ -556,8 +556,8 @@ function drh_core_default_page_manager_pages() {
       'admin_title' => 'Indgangsbøn',
       'title' => '',
       'body' => 'Velkommen til Den Rytmiske Højskole. Vi har professionelle studier, kompositionsværktøjer, masser af fastansatte musiklærere, og mulighed for design, selvudvikling og meget mere.
-      
-      Musikhøjskolen ligger i Vig, og du er altid velkommen til en rundvisning.',
+
+            Musikhøjskolen ligger i Vig, og du er altid velkommen til en rundvisning.',
       'format' => '3',
       'substitute' => TRUE,
     );
@@ -785,12 +785,12 @@ function drh_core_default_page_manager_pages() {
       'admin_title' => 'Adresse',
       'title' => 'Adresse',
       'body' => 'Den Rytmiske Højskole
-      Jyderupvej 18
-      4560 Vig
-      
-      5936 0600
-      
-      den@rytmiske.dk',
+            Jyderupvej 18
+            4560 Vig
+
+            5936 0600
+
+            den@rytmiske.dk',
       'format' => '3',
       'substitute' => TRUE,
     );
