@@ -165,6 +165,20 @@ function drh_core_imagecache_default_presets() {
       ),
     ),
   );
+  $presets['thumb_profile_view'] = array(
+    'presetname' => 'thumb_profile_view',
+    'actions' => array(
+      0 => array(
+        'weight' => '0',
+        'module' => 'imagecache',
+        'action' => 'imagecache_scale_and_crop',
+        'data' => array(
+          'width' => '160',
+          'height' => '120',
+        ),
+      ),
+    ),
+  );
 
   return $presets;
 }
