@@ -36,17 +36,13 @@
   <?php endif; ?>
   </div>
 
-  <?php if ($panel_admin): ?>
-  <div class="clear-block">
-  <?php endif; ?>
+  <div class="clear-block images">
   <?php if ($content['bottom']): ?>
   <div class="panel-panel grid-16">
     <div class="inside"><?php print $content['bottom']; ?></div>
   </div>
   <?php endif; ?>
-  <?php if ($panel_admin): ?>
   </div>
-  <?php endif; ?>
 </div>
 <?php if ($panel_admin): ?>
 </div>

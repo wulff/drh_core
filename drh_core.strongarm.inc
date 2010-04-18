@@ -68,7 +68,7 @@ function drh_core_strongarm() {
     ),
     'body_field' => array (
       'region' => 'main',
-      'weight' => '3',
+      'weight' => '4',
       'has_required' => false,
       'title' => NULL,
       'hidden' => 0,
@@ -145,7 +145,7 @@ function drh_core_strongarm() {
     ),
     'group_images' => array (
       'region' => 'main',
-      'weight' => '5',
+      'weight' => '6',
       'has_required' => false,
       'title' => 'Billeder',
       'collapsed' => 1,
@@ -153,7 +153,7 @@ function drh_core_strongarm() {
     ),
     'group_links' => array (
       'region' => 'main',
-      'weight' => '6',
+      'weight' => '7',
       'has_required' => false,
       'title' => 'Links',
       'collapsed' => 1,
@@ -168,10 +168,17 @@ function drh_core_strongarm() {
     ),
     'group_courses' => array (
       'region' => 'main',
-      'weight' => '4',
+      'weight' => '5',
       'has_required' => false,
       'title' => 'Fag',
       'collapsed' => 0,
+      'hidden' => 0,
+    ),
+    'field_teaser' => array (
+      'region' => 'main',
+      'weight' => '3',
+      'has_required' => false,
+      'title' => 'Teaser',
       'hidden' => 0,
     ),
   );

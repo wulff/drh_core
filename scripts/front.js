@@ -1,15 +1,13 @@
 // $Id$
 
 Drupal.behaviors.drhCoreFront = function (context) {
-//  $('.field-field-image-front-off').hide();
-
   $('.front .teaser').hover(
     function () {
       $(this).find('.field-field-image-front-on').fadeOut();
-//      $(this).find('.field-field-image-front-off').fadeIn('slow');
+      $(this).find('p').css('z-index', 0);
     },
     function () {
-//      $(this).find('.field-field-image-front-off').fadeOut('fast');
+      $(this).find('p').css('z-index', -3);
       $(this).find('.field-field-image-front-on').fadeIn();
     }
   );
