@@ -1194,7 +1194,7 @@ function drh_core_views_default_views() {
   ));
   $handler->override_option('arguments', array(
     'tid' => array(
-      'default_action' => 'not found',
+      'default_action' => 'ignore',
       'style_plugin' => 'default_summary',
       'style_options' => array(),
       'wildcard' => 'all',
