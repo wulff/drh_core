@@ -472,7 +472,7 @@ function drh_core_views_default_views() {
       'empty' => '',
       'hide_empty' => 0,
       'empty_zero' => 0,
-      'link_to_node' => 0,
+      'link_to_node' => 1,
       'label_type' => 'none',
       'format' => 'grid-9-crop_default',
       'multiple' => array(
@@ -486,6 +486,9 @@ function drh_core_views_default_views() {
       'table' => 'node_data_field_image',
       'field' => 'field_image_fid',
       'relationship' => 'field_image_ref_nid',
+      'override' => array(
+        'button' => 'Override',
+      ),
     ),
   ));
   $handler->override_option('arguments', array(
@@ -565,17 +568,89 @@ function drh_core_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
-  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
-  $handler->override_option('pane_title', 'Vedhæftede billeder');
+  $handler = $view->new_display('panel_pane', 'Grid-9', 'panel_pane_1');
+  $handler->override_option('pane_title', 'Billeder – Grid 9');
   $handler->override_option('pane_description', '');
   $handler->override_option('pane_category', array(
-    'name' => 'View panes',
-    'weight' => 0,
+    'name' => 'DRH',
+    'weight' => '0',
   ));
   $handler->override_option('allow', array(
     'use_pager' => 0,
     'items_per_page' => 'items_per_page',
     'offset' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'path_override' => 0,
+    'title_override' => 0,
+    'exposed_form' => FALSE,
+  ));
+  $handler->override_option('argument_input', array(
+    'nid' => array(
+      'type' => 'context',
+      'context' => 'node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Node: Nid',
+    ),
+  ));
+  $handler->override_option('link_to_view', 0);
+  $handler->override_option('inherit_panels_path', 0);
+  $handler = $view->new_display('panel_pane', 'Grid-4', 'panel_pane_2');
+  $handler->override_option('fields', array(
+    'field_image_fid' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'link_to_node' => 1,
+      'label_type' => 'none',
+      'format' => 'grid-4-crop_default',
+      'multiple' => array(
+        'group' => TRUE,
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_reversed' => FALSE,
+      ),
+      'exclude' => 0,
+      'id' => 'field_image_fid',
+      'table' => 'node_data_field_image',
+      'field' => 'field_image_fid',
+      'relationship' => 'field_image_ref_nid',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+    ),
+  ));
+  $handler->override_option('pane_title', 'Billeder – Grid 4');
+  $handler->override_option('pane_description', '');
+  $handler->override_option('pane_category', array(
+    'name' => 'DRH',
+    'weight' => '0',
+  ));
+  $handler->override_option('allow', array(
+    'use_pager' => 0,
+    'items_per_page' => 'items_per_page',
+    'offset' => 'offset',
     'link_to_view' => 0,
     'more_link' => 0,
     'path_override' => 0,
